@@ -1,0 +1,7 @@
+## Interface: 100005
+## Title: |cffeb008bJoJo's|r |cfff55b9fBizarre|r |cfffc89b5Adventure|r |cffffb2ccSoundpack|r |cffffd9e5by|r |cffffffffFirebugs|r
+## IconTexture: Interface\AddOns\JJBA_Soundpack\Icon.tga
+libs\LibStub\LibStub.lua
+libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+embeds.xml
+Soundpaths.lua 
