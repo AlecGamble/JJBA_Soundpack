@@ -40,7 +40,46 @@ LSM:Register("sound", Name.."To Be Continued 2", [[Interface\Addons\JJBA_Soundpa
 LSM:Register("sound", Name.."The Hand", [[Interface\Addons\JJBA_Soundpack\sound\TheHand.ogg]])
 LSM:Register("sound", Name.."Yes Yes Yes Yes Yes", [[Interface\Addons\JJBA_Soundpack\sound\YesYesYesYes.ogg]])
 LSM:Register("sound", Name.."Za Warudo", [[Interface\Addons\JJBA_Soundpack\sound\ZaWarudo.ogg]])
+LSM:Register("sound", Name.."Zero", [[Interface\Addons\JJBA_Soundpack\sound\Zero.ogg]])
 
 -- -----
 --   STATUSBAR
 -- -----
+
+-- -----
+--  COUNTDOWNS
+-- -----
+
+local heroes = {
+	"Dio",
+}
+
+-- Bigwigs Countdown Integration
+for i = 1, #heroes do
+    local hero = heroes[i]
+    
+    if BigWigsAPI ~= nil then
+        local path = "Interface\\AddOns\\JJBA_Soundpack\\sound\\countdown\\%s\\%s_%d.ogg"
+        BigWigsAPI:RegisterCountdown(Name..hero, {
+            path:format(hero, hero, 1),
+            path:format(hero, hero, 2),
+            path:format(hero, hero, 3),
+            path:format(hero, hero, 4),
+            path:format(hero, hero, 5),
+        })
+    end
+end
+
+-- DBM Countdown Integration
+local inserted = false
+function DBM_CountPack_JJBA()
+    if inserted then return end
+    for i = 1, #heroes do
+        local hero = heroes[i]
+        if DBM ~= nil then
+            local path = "Interface\\AddOns\\JJBA_Soundpack\\sound\\countdown\\%s\\"
+            table.insert(DBM.Counts, { text = Name..hero, value = hero, path = path:format(hero), max = 5})
+        end
+    end
+    inserted = true
+end
