@@ -1,8 +1,9 @@
-## Interface: 110005, 110007, 110100, 110200
+## Interface: 110005, 110007, 110100, 110200, 120001
 ## Title: |cffeb008bJoJo's|r |cfff55b9fBizarre|r |cfffc89b5Adventure|r |cffffb2ccSoundpack|r |cffffd9e5by|r |cffffffffFirebugs|r
 ## IconTexture: Interface\AddOns\JJBA_Soundpack\Icon.tga
 ## X-DBM-CountPack: 1
 ## X-DBM-CountPack-GlobalName: DBM_CountPack_JJBA
+
 libs\LibStub\LibStub.lua
 libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
 embeds.xml
